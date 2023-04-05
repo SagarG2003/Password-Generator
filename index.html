@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('max-bender-1YHXFeOYpN0-unsplash.jpg');
+        }
+
+        .container {
+            /* background-image: url(max-bender-1YHXFeOYpN0-unsplash); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .password-generator {
+            width: 90vh;
+            height: 60vh;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(3px);
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            color: rgb(25, 3, 66);
+            font-size: 22px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        .password-generator div {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .password {
+            min-width: 280px;
+            background-color: #0d1474;
+            color: rgb(199, 199, 199);
+        }
+
+        .password p {
+            padding: 6px 10px;
+        }
+
+        .password i {
+            background-color: rgba(0, 0, 0, 0.575);
+            padding: 6px 10px;
+        }
+
+        .password-generator button {
+            width: 100%;
+            border: none;
+            color: rgba(255, 255, 255, 0.699);
+            background-color: #0d1474;
+            padding: 10px;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="password-generator">
+            <h2>Password Generator</h2>
+            <div class="password">
+                <p id="passwordBox"></p><i class="far fa-clipboard" onclick="copyPassword()"></i>
+            </div>
+            <div>
+                <label for="length">Length</label>
+                <input type="number" id="length" min="6" max="20" value="6">
+            </div>
+            <div>
+                <label for="symbol">Include Symbol</label>
+                <input type="checkbox" id="symbol" checked>
+            </div>
+            <div>
+                <label for="number">Include Number</label>
+                <input type="checkbox" id="number" checked>
+            </div>
+            <div>
+                <label for="lowerCase">Include lowerCase</label>
+                <input type="checkbox" id="lowerCase" checked>
+            </div>
+            <div>
+                <label for="upperCase">Include upperCase</label>
+                <input type="checkbox" id="upperCase" checked>
+            </div>
+            <button onclick="createPassword()">Get Random Password</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="pwdgenerator.js"></script>
+</body>
+
+</html>
